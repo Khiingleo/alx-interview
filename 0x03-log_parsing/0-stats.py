@@ -24,17 +24,17 @@ try:
 
         if line_counted % 10 == 0:
             print(f"File size: {total_size}")
-            for code, count in sorted(status_dict.items()):
-                if count > 0:
-                    print(f"{code}: {count}")
+            for code in sorted(status_dict.keys()):
+                if status_dict[code] != 0:
+                    print(f"{code}: {status_dict[code]}")
 
 except KeyboardInterrupt:
-    print(f"\nFile size: {total_size}")
-    for code, count in sorted(status_dict.items()):
-        if count > 0:
-            print(f"{code}: {count}")
+    print(f"File size: {total_size}")
+    for code in sorted(status_dict.keys()):
+        if status_dict[code] != 0:
+            print(f"{code}: {status_dict[code]}")
 
-print(f"\nFile size: {total_size}")
-for code, count in sorted(status_dict.items()):
-    if count > 0:
-        print(f"{code}: {count}")
+print(f"File size: {total_size}")
+for code in sorted(status_dict.keys()):
+    if status_dict[code] != 0:
+        print(f"{code}: {status_dict[code]}")
