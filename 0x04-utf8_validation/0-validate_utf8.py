@@ -14,7 +14,7 @@ def validUTF8(data):
     while i < len(data):
         # check if the first bit is = 0
         if data[i] >> 7 == 0:
-            i+= 1
+            i += 1
         # check if it is a two byte character
         elif (data[i] >> 5 == 0b110 and i + 1 < len(data)
               and data[i + 1] >> 6 == 0b10):
