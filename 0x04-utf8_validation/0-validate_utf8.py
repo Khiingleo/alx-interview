@@ -12,6 +12,8 @@ def validUTF8(data):
     # iterate through the data
     i = 0
     while i < len(data):
+        # mask the integer to keep only the 8 least significant bits
+        data[i] = data[i] & 0b11111111
         # check if the first bit is = 0
         if data[i] >> 7 == 0:
             i += 1
